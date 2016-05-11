@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Abi-q6-Y1l">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Exu-N4-S47">
+            <objects>
+                <navigationController id="Abi-q6-Y1l" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Wn5-hK-5Kq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tpN-Ki-UaS" kind="relationship" relationship="rootViewController" id="OSY-0R-6cI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SPq-dh-Hh7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-149" y="316"/>
+        </scene>
+        <!--Announcement View Controller-->
+        <scene sceneID="spF-aj-2H2">
+            <objects>
+                <viewController id="tpN-Ki-UaS" customClass="AnnouncementViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n7Z-y6-pgi"/>
+                        <viewControllerLayoutGuide type="bottom" id="lOw-nn-RcB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4Xe-Km-yvP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4pF-G6-M6U">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4pF-G6-M6U" firstAttribute="top" secondItem="4Xe-Km-yvP" secondAttribute="top" id="8GM-pB-XQR"/>
+                            <constraint firstItem="4pF-G6-M6U" firstAttribute="leading" secondItem="4Xe-Km-yvP" secondAttribute="leading" id="GZ8-as-0Nq"/>
+                            <constraint firstItem="lOw-nn-RcB" firstAttribute="top" secondItem="4pF-G6-M6U" secondAttribute="bottom" id="W1c-6b-enm"/>
+                            <constraint firstAttribute="trailing" secondItem="4pF-G6-M6U" secondAttribute="trailing" id="tmq-2Y-DUU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="sWd-VF-S1V">
+                        <barButtonItem key="rightBarButtonItem" image="announce_fire" id="YMb-yK-cfj">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="4pF-G6-M6U" id="4kS-vQ-rLr"/>
+                        <segue destination="SZt-8x-1J4" kind="push" identifier="chatlistSegue" id="VTi-sW-ePP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SV8-17-smE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="316"/>
+        </scene>
+        <!--Chat List View Controller-->
+        <scene sceneID="nu9-LV-KHd">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="SZt-8x-1J4" customClass="ChatListViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gu5-TY-vvd"/>
+                        <viewControllerLayoutGuide type="bottom" id="ceu-3v-3AG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bYf-xq-5Sg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K4m-Tf-fUi">
+                        <barButtonItem key="leftBarButtonItem" image="back.png" style="plain" id="U0E-Rv-bFt">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="backBtn:" destination="SZt-8x-1J4" id="bem-al-GYk"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jyd-3x-JgF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="611" y="28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="announce_fire" width="25" height="25"/>
+        <image name="back.png" width="13" height="20"/>
+    </resources>
+</document>

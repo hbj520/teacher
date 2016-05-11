@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="SGe-Y9-6wH">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="qgs-Pp-EQb">
+            <objects>
+                <navigationController id="SGe-Y9-6wH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="3cj-Eo-wnj">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.15686274510000001" green="0.15686274510000001" blue="0.1843137255" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="6mU-TT-gfo" kind="relationship" relationship="rootViewController" id="Q3L-uM-VFY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DKv-d7-mW0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-542" y="402"/>
+        </scene>
+        <!--Customer Problem View Controller-->
+        <scene sceneID="NYq-DT-T4e">
+            <objects>
+                <viewController hidesBottomBarWhenPushed="YES" id="6mU-TT-gfo" customClass="CustomerProblemViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K2Y-SI-5HJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="hax-Of-Ah0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dyU-c7-yjW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="eOW-2g-GLP">
+                        <barButtonItem key="leftBarButtonItem" image="publish_back" id="pJO-fV-Wzf">
+                            <color key="tintColor" red="0.96862745100000003" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="backBtn:" destination="6mU-TT-gfo" id="uIn-zL-Ag8"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backBtn" destination="pJO-fV-Wzf" id="mRm-Z6-Pa2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PID-mS-NfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-177" y="402"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="publish_back" width="61" height="29"/>
+    </resources>
+</document>

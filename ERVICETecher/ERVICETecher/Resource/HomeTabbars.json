@@ -1,0 +1,35 @@
+{
+    "tabBarMenus":
+    [
+     {
+     "image":"tabbar_announce",
+     "select_image":"tabbar_announce",
+     "title":"公告",
+     "storybordId":"annoucementSB"
+     },
+     {
+     "image":"tabbar_publish",
+     "select_image":"tabbar_publish",
+     "title":"发布",
+     "storybordId":"publishSB"
+     },
+     {
+     "image":"tabbar_customerproblem",
+     "select_image":"tabbar_customerproblem",
+     "title":"客户答疑",
+     "storybordId":"customerProblemSB"
+     },
+     {
+     "image":"tabbar_mycustomer",
+     "select_image":"tabbar_mycustomer",
+     "title":"我的客户",
+     "storybordId":"mycustomerSB"
+     },
+     {
+     "image":"tabbar_personal",
+     "select_image":"tabbar_personal",
+     "title":"个人",
+     "storybordId":"personalSB"
+     }
+     ],
+}
