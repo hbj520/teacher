@@ -12,12 +12,13 @@
 
 #import "AppDelegate.h"
 #import "TTGlobalUICommon.h"
-@interface LoginViewController ()<EMClientDelegate>
+@interface LoginViewController ()<EMClientDelegate,UITextFieldDelegate>
 - (IBAction)exitBtn:(UIButton *)sender;
 @property (weak, nonatomic) IBOutlet UITextField *numberInput;
 @property (weak, nonatomic) IBOutlet UITextField *passwordInput;
 @property (weak, nonatomic) IBOutlet UIButton *loginBtn;
 - (IBAction)loginBtn:(UIButton *)sender;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *top;
 
 @end
 
@@ -27,6 +28,8 @@
     [super viewDidLoad];
     self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view.
+    self.numberInput.delegate = self;
+    self.passwordInput.delegate = self;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textfieldIsEditing:) name:UITextFieldTextDidChangeNotification object:nil];
 }
 - (void)viewWillDisappear:(BOOL)animated{
@@ -37,6 +40,29 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+
+{
+    CGFloat offset = self.view.frame.size.height - (textField.frame.origin.y+textField.frame.size.height+216+50);
+    if (offset<=0) {
+        [UIView animateWithDuration:0.3 animations:^{
+            self.top.constant = offset;
+        }];
+    }
+    
+    return YES;
+}
+
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        self.top.constant = 10;
+    }];
+    return YES;
+}
+
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [Tools hideKeyBoard];
 }
